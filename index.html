@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Curso: Gerencia de Sistemas de Información</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+    <!-- Font Awesome para íconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>Gerencia de Sistemas de Información</h1>
+            <p class="descripcion-curso">
+                Este curso aborda la gestión estratégica y operativa de los sistemas de información en las organizaciones, 
+                enfocándose en la administración en la nube, aplicaciones empresariales, infraestructura tecnológica y desarrollo de sistemas.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="unidad">
+            <h2 class="unidad-titulo">
+                <span>Unidad 1: Administración en la Nube</span>
+                <i class="fas fa-chevron-down icono-toggle"></i>
+            </h2>
+            <ul class="temas-lista oculto">
+                <li><a href="#" class="tema-link">Introducción a la computación en la nube</a></li>
+                <li><a href="#" class="tema-link">Modelos de servicio en la nube (IaaS, PaaS, SaaS)</a></li>
+                <li><a href="#" class="tema-link">Seguridad y privacidad en la nube</a></li>
+                <li><a href="#" class="tema-link">Gestión y administración de recursos en la nube</a></li>
+            </ul>
+        </section>
+
+        <section class="unidad">
+            <h2 class="unidad-titulo">
+                <span>Unidad 2: Aplicaciones Empresariales de Sistemas de Información</span>
+                <i class="fas fa-chevron-down icono-toggle"></i>
+            </h2>
+            <ul class="temas-lista oculto">
+                <li><a href="#" class="tema-link">Sistemas ERP y CRM</a></li>
+                <li><a href="#" class="tema-link">Automatización de procesos empresariales</a></li>
+                <li><a href="#" class="tema-link">Integración de sistemas de información</a></li>
+                <li><a href="#" class="tema-link">Impacto de las aplicaciones en la toma de decisiones</a></li>
+            </ul>
+        </section>
+
+        <section class="unidad">
+            <h2 class="unidad-titulo">
+                <span>Unidad 3: Infraestructura de Tecnologías de Información</span>
+                <i class="fas fa-chevron-down icono-toggle"></i>
+            </h2>
+            <ul class="temas-lista oculto">
+                <li><a href="#" class="tema-link">Componentes de la infraestructura TI</a></li>
+                <li><a href="#" class="tema-link">Redes y telecomunicaciones</a></li>
+                <li><a href="#" class="tema-link">Data centers y almacenamiento</a></li>
+                <li><a href="#" class="tema-link">Gestión de la infraestructura TI</a></li>
+            </ul>
+        </section>
+
+        <section class="unidad">
+            <h2 class="unidad-titulo">
+                <span>Unidad 4: Desarrollo de Sistemas de Información en la Empresa</span>
+                <i class="fas fa-chevron-down icono-toggle"></i>
+            </h2>
+            <ul class="temas-lista oculto">
+                <li><a href="#" class="tema-link">Ciclo de vida del desarrollo de sistemas</a></li>
+                <li><a href="#" class="tema-link">Metodologías ágiles y tradicionales</a></li>
+                <li><a href="#" class="tema-link">Herramientas para el desarrollo de software</a></li>
+                <li><a href="#" class="tema-link">Gestión de proyectos de sistemas de información</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2024 Gerencia de Sistemas de Información - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.unidad-titulo').forEach(titulo => {
+            titulo.style.cursor = 'pointer';
+            titulo.addEventListener('click', () => {
+                const lista = titulo.nextElementSibling;
+                const icono = titulo.querySelector('.icono-toggle');
+                if (lista.classList.contains('oculto')) {
+                    lista.classList.remove('oculto');
+                    lista.style.maxHeight = lista.scrollHeight + "px";
+                    icono.classList.remove('fa-chevron-down');
+                    icono.classList.add('fa-chevron-up');
+                } else {
+                    lista.style.maxHeight = null;
+                    lista.classList.add('oculto');
+                    icono.classList.remove('fa-chevron-up');
+                    icono.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
