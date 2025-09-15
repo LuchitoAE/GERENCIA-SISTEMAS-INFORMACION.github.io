@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Computación en la nube</title>
+    <link rel="stylesheet" href="semanas.css" />
+    <script>
+        // Script para toggle de temas
+        document.addEventListener('DOMContentLoaded', () => {
+            const unidades = document.querySelectorAll('.unidad-titulo');
+            unidades.forEach(titulo => {
+                titulo.addEventListener('click', () => {
+                    const lista = titulo.nextElementSibling;
+                    const icono = titulo.querySelector('.icono-toggle');
+                    if (lista.style.maxHeight) {
+                        lista.style.maxHeight = null;
+                        icono.style.transform = 'rotate(0deg)';
+                    } else {
+                        lista.style.maxHeight = lista.scrollHeight + 'px';
+                        icono.style.transform = 'rotate(90deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>Computación en la nube</h1>
+            <p class="descripcion-curso">Conceptos y modelos para entender el uso de la nube en las organizaciones.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="unidad">
+            <div class="unidad-titulo">
+                Computación en la nube
+                <span class="icono-toggle">&#9654;</span>
+            </div>
+            <ul class="temas-lista oculto" style="max-height: none; padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #e1e4e8;">
+                <li>La computación en la nube permite acceder a recursos informáticos a través de internet.</li>
+                <li>Ofrece escalabilidad, flexibilidad y reducción de costos en infraestructura tecnológica.</li>
+                <li>Los servicios pueden incluir almacenamiento, procesamiento, bases de datos y aplicaciones.</li>
+            </ul>
+        </article>
+
+        <article class="unidad">
+            <div class="unidad-titulo">
+                Modelos de Despliegue
+                <span class="icono-toggle">&#9654;</span>
+            </div>
+            <ul class="temas-lista oculto">
+                <li><strong>Nube Pública:</strong> Servicios ofrecidos por proveedores externos accesibles al público general.</li>
+                <li><strong>Nube Privada:</strong> Infraestructura exclusiva para una sola organización, con mayor control y seguridad.</li>
+                <li><strong>Nube Híbrida:</strong> Combinación de nubes públicas y privadas para aprovechar ventajas de ambas.</li>
+                <li><strong>Nube Comunitaria:</strong> Compartida entre varias organizaciones con intereses comunes.</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer class="footer">
+        &copy; 2024 Empresa de Sistemas de Información
+    </footer>
+</body>
+</html>
