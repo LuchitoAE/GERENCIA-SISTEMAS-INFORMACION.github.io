@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Semana 3: Administración en la nube</title>
+    <link rel="stylesheet" href="semanas.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="header-content">
+            <h1>Computación en la nube - Semana 3</h1>
+            <p class="descripcion-curso">Explorando la administración, funciones y tecnologías clave para implementar soluciones en la nube en las organizaciones.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <article class="unidad">
+            <div class="unidad-titulo">
+                1. Administración en la nube
+                <span class="icono-toggle">&#9654;</span>
+            </div>
+            <!-- Sin clase 'oculto' aquí para mantener expandido inicial (evita conflicto con !important en CSS) -->
+            <ul class="temas-lista" style="max-height: none; padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #e1e4e8;">
+                <li><strong>Conceptos básicos de administración:</strong> La administración en la nube implica la gestión integral de recursos, usuarios y políticas en entornos de computación en la nube. Incluye monitoreo continuo, optimización de costos y aseguramiento de la disponibilidad de servicios para maximizar el rendimiento organizacional.</li>
+                <li><strong>Gestión de identidades y accesos (IAM):</strong> Herramientas como AWS IAM o Azure Active Directory permiten controlar quién accede a qué recursos. Se definen roles, permisos y autenticación multifactor (MFA) para prevenir brechas de seguridad y cumplir con regulaciones como GDPR o HIPAA.</li>
+                <li><strong>Monitoreo y logging:</strong> Plataformas como CloudWatch (AWS) o Stackdriver (Google Cloud) recopilan métricas en tiempo real sobre uso de CPU, almacenamiento y tráfico de red. Esto facilita la detección de anomalías, alertas automáticas y análisis forense en caso de incidentes.</li>
+                <li><strong>Optimización de costos:</strong> Estrategias como el uso de instancias reservadas, autoescalado y análisis de facturación ayudan a reducir gastos. Por ejemplo, herramientas de tagging permiten rastrear costos por departamento o proyecto, evitando sobreprovisionamiento.</li>
+                <li><strong>Gestión de actualizaciones y parches:</strong> Automatización mediante scripts o servicios gestionados (ej. AWS Systems Manager) asegura que los servidores y aplicaciones estén actualizados, minimizando vulnerabilidades sin interrupciones en el servicio.</li>
+                <li><strong>Backup y recuperación de desastres:</strong> Políticas de respaldo automatizado en servicios como S3 o Azure Blob Storage, combinadas con planes de DR (Disaster Recovery), garantizan la continuidad del negocio con tiempos de recuperación (RTO) y puntos de recuperación (RPO) definidos.</li>
+            </ul>
+        </article>
+
+        <article class="unidad">
+            <div class="unidad-titulo">
+                2. Funciones
+                <span class="icono-toggle">&#9654;</span>
+            </div>
+            <ul class="temas-lista oculto">
+                <li><strong>Funciones serverless (FaaS):</strong> Modelos como AWS Lambda, Azure Functions o Google Cloud Functions permiten ejecutar código en respuesta a eventos sin gestionar servidores subyacentes. Esto reduce la complejidad operativa y se cobra solo por el tiempo de ejecución real.</li>
+                <li><strong>Escalabilidad automática:</strong> Las funciones en la nube escalan horizontalmente según la demanda, manejando picos de tráfico (ej. durante campañas de marketing) sin intervención manual, lo que mejora la eficiencia y reduce costos en comparación con infraestructuras tradicionales.</li>
+                <li><strong>Integración con eventos y triggers:</strong> Se activan por eventos como uploads a almacenamiento (S3), mensajes en colas (SQS) o cambios en bases de datos. Esto habilita arquitecturas event-driven, ideales para microservicios y procesamiento en tiempo real.</li>
+                <li><strong>Desarrollo y despliegue ágil:</strong> Soporte para lenguajes como Python, Node.js y Java facilita el desarrollo rápido. Herramientas CI/CD (ej. AWS CodePipeline) permiten despliegues continuos, con pruebas unitarias y entornos de staging para minimizar errores en producción.</li>
+                <li><strong>Seguridad en funciones:</strong> Políticas de ejecución en entornos aislados (sandbox), integración con IAM para permisos granulares y cifrado de datos en tránsito y reposo protegen contra inyecciones o accesos no autorizados.</li>
+                <li><strong>Casos de uso comunes:</strong> Procesamiento de imágenes, APIs backend, ETL (Extract, Transform, Load) para datos y automatización de tareas como notificaciones push o análisis de logs, todo sin preocuparse por la infraestructura subyacente.</li>
+            </ul>
+        </article>
+
+        <article class="unidad">
+            <div class="unidad-titulo">
+                3. Tecnología
+                <span class="icono-toggle">&#9654;</span>
+            </div>
+            <ul class="temas-lista oculto">
+                <li><strong>Infraestructura como Servicio (IaaS):</strong> Proporciona recursos virtuales como VMs (ej. EC2 en AWS), redes y almacenamiento. Tecnologías subyacentes incluyen virtualización con hipervisores como KVM o VMware, permitiendo abstracción del hardware físico para mayor flexibilidad.</li>
+                <li><strong>Plataforma como Servicio (PaaS):</strong> Entornos de desarrollo completos (ej. Heroku o Google App Engine) que manejan runtime, middleware y OS. Utiliza contenedores Docker y orquestadores como Kubernetes para despliegues portables y escalables.</li>
+                <li><strong>Software como Servicio (SaaS):</strong> Aplicaciones listas para usar (ej. Office 365 o Salesforce) accesibles vía web. Backend impulsado por arquitecturas multi-tenant, bases de datos distribuidas como NoSQL (MongoDB) y CDN para entrega global de contenido.</li>
+                <li><strong>Tecnologías de almacenamiento y bases de datos:</strong> Opciones como bloques (EBS), objetos (S3) y archivos (EFS), junto con DB relacionales (RDS) y no relacionales (DynamoDB). Soporte para big data con herramientas como Hadoop o Spark en la nube para procesamiento distribuido.</li>
+                <li><strong>Redes y seguridad en la nube:</strong> VPC (Virtual Private Clouds) para aislamiento, firewalls, VPN y servicios como WAF (Web Application Firewall). Tecnologías como zero-trust y cifrado end-to-end aseguran la confidencialidad en entornos híbridos o multi-nube.</li>
+                <li><strong>Inteligencia Artificial y Machine Learning:</strong> Servicios como SageMaker (AWS) o Vertex AI (Google) integran GPUs/TPUs para entrenamiento de modelos. Frameworks como TensorFlow o PyTorch se ejecutan en la nube, habilitando aplicaciones de IA escalables sin hardware especializado local.</li>
+            </ul>
+        </article>
+    </main>
+
+    <footer class="footer">
+        &copy; 2024 Empresa de Sistemas de Información
+    </footer>
+
+    <!-- Enlace al script general para todas las semanas -->
+    <script src="script.js"></script>
+</body>
+</html>

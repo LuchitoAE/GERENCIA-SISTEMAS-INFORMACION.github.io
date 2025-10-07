@@ -5,25 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Computación en la nube</title>
     <link rel="stylesheet" href="semanas.css" />
-    <script>
-        // Script para toggle de temas
-        document.addEventListener('DOMContentLoaded', () => {
-            const unidades = document.querySelectorAll('.unidad-titulo');
-            unidades.forEach(titulo => {
-                titulo.addEventListener('click', () => {
-                    const lista = titulo.nextElementSibling;
-                    const icono = titulo.querySelector('.icono-toggle');
-                    if (lista.style.maxHeight) {
-                        lista.style.maxHeight = null;
-                        icono.style.transform = 'rotate(0deg)';
-                    } else {
-                        lista.style.maxHeight = lista.scrollHeight + 'px';
-                        icono.style.transform = 'rotate(90deg)';
-                    }
-                });
-            });
-        });
-    </script>
 </head>
 <body>
     <header class="header">
@@ -64,5 +45,8 @@
     <footer class="footer">
         &copy; 2024 Empresa de Sistemas de Información
     </footer>
+
+    <!-- Enlace al script general para todas las semanas -->
+    <script src="script.js"></script>
 </body>
 </html>
