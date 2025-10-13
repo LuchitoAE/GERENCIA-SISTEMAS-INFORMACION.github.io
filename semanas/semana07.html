@@ -3,47 +3,46 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Semana 5: Sistemas de Información en los Negocios</title>
+    <title>Semana 7: Aplicaciones Empresariales y EAS</title>
     <link rel="stylesheet" href="semanas.css" />
 </head>
 <body>
     <header class="header">
         <div class="overlay"></div>
         <div class="header-content">
-            <h1>Sistemas de Información en los Negocios - Semana 5</h1>
-            <p class="descripcion-curso">Explorando el rol de los sistemas de información y la inteligencia de negocios en la optimización de procesos empresariales y la toma de decisiones basada en datos.</p>
+            <h1>Aplicaciones Empresariales y EAS - Semana 7</h1>
+            <p class="descripcion-curso">Explorando los sistemas empresariales integrados (EAS) y su papel en la gestión eficiente de procesos, recursos y relaciones dentro de una organización moderna.</p>
         </div>
     </header>
 
     <main class="container">
         <article class="unidad">
             <div class="unidad-titulo">
-                1. Los sistemas de información en los negocios
+                1. Aplicaciones empresariales (EAS): concepto y propósito
                 <span class="icono-toggle">&#9654;</span>
             </div>
-            <!-- Sin clase 'oculto' aquí para mantener expandido inicial (evita conflicto con !important en CSS) -->
             <ul class="temas-lista" style="max-height: none; padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #e1e4e8;">
-                <li><strong>Definición y rol estratégico:</strong> Los sistemas de información (SI) son conjuntos integrados de componentes que recolectan, procesan y distribuyen datos para apoyar operaciones y decisiones en los negocios. Actúan como el "sistema nervioso" de la empresa, alineando TI con objetivos estratégicos para ganar ventaja competitiva.</li>
-                <li><strong>Tipos de SI en entornos empresariales:</strong> Incluyen TPS (procesamiento de transacciones) para operaciones diarias, MIS (información gerencial) para reportes, DSS (soporte a decisiones) para análisis y EIS (ejecutiva) para visión de alto nivel. Ejemplos: ERP como SAP para integración de procesos.</li>
-                <li><strong>Beneficios para los negocios:</strong> Mejoran la eficiencia operativa (reduciendo errores en un 40-60%), facilitan la colaboración (ej. CRM como Salesforce para ventas) y habilitan innovación, como e-commerce o análisis predictivo, impulsando el crecimiento y la retención de clientes.</li>
-                <li><strong>Integración con procesos de negocio:</strong> Los SI se alinean con cadenas de valor (modelo de Porter), automatizando flujos como supply chain o finanzas. Herramientas como BPM (Business Process Management) optimizan workflows, reduciendo tiempos de ciclo y costos.</li>
-                <li><strong>Desafíos y riesgos:</strong> Problemas como resistencia al cambio, brechas de seguridad (ej. ciberataques a datos sensibles) y obsolescencia. Soluciones incluyen capacitación, compliance con GDPR y adopción de cloud para escalabilidad, con ROI medible en 1-2 años.</li>
-                <li><strong>Casos de uso en industrias:</strong> En retail, SI como POS (Point of Sale) analizan ventas en tiempo real; en manufactura, MES (Manufacturing Execution Systems) controlan producción. Empresas como Amazon usan SI para personalización y logística predictiva.</li>
+                <li><strong>Definición:</strong> Las aplicaciones empresariales o EAS (Enterprise Application Software) son sistemas diseñados para soportar y automatizar procesos clave de negocio a gran escala. Permiten la integración de información y operaciones en toda la organización.</li>
+                <li><strong>Objetivo principal:</strong> Mejorar la eficiencia, reducir duplicidades de datos y proporcionar una visión unificada del desempeño empresarial. Son esenciales para la planificación, control y toma de decisiones estratégicas.</li>
+                <li><strong>Características:</strong> Escalabilidad, modularidad, integración con bases de datos, soporte multiusuario y alta disponibilidad. Además, deben adaptarse a políticas de seguridad y cumplimiento normativo.</li>
+                <li><strong>Ejemplos comunes:</strong> SAP ERP, Oracle E-Business Suite, Microsoft Dynamics 365 y Salesforce son ejemplos de EAS ampliamente utilizados en distintas industrias.</li>
+                <li><strong>Ventajas:</strong> Incremento en la productividad, trazabilidad de procesos, reducción de costos operativos y mejora en la toma de decisiones basada en datos consolidados.</li>
+                <li><strong>Desafíos:</strong> Altos costos de implementación, resistencia al cambio organizacional y necesidad de personal capacitado en gestión y mantenimiento de EAS.</li>
             </ul>
         </article>
 
         <article class="unidad">
             <div class="unidad-titulo">
-                2. Fundamentos de inteligencia de negocios: bases de datos y administración de la información
+                2. Tipos de sistemas de información empresarial: CRM, SCM, ERP y SIG
                 <span class="icono-toggle">&#9654;</span>
             </div>
             <ul class="temas-lista oculto">
-                <li><strong>Conceptos básicos de BI (Business Intelligence):</strong> BI transforma datos crudos en insights accionables mediante herramientas de análisis, visualización y reporting. Facilita la toma de decisiones informada, con frameworks como el ciclo de Kimball para diseño de data warehouses.</li>
-                <li><strong>Bases de datos relacionales y no relacionales:</strong> Relacionales (SQL Server, MySQL) usan tablas y joins para datos estructurados; no relacionales (MongoDB, Cassandra) manejan big data no estructurado (ej. JSON para logs). Elección depende de volumen y velocidad (ACID vs. BASE).</li>
-                <li><strong>Administración de la información (Information Management):</strong> Incluye gobernanza de datos (calidad, metadata) y MDM (Master Data Management) para consistencia. Herramientas como Collibra aseguran compliance y evitan silos de datos, clave para BI preciso.</li>
-                <li><strong>ETL y data warehousing:</strong> Procesos ETL (Extract, Transform, Load) integran datos de fuentes diversas (ej. Talend o Informatica) en almacenes centralizados como Snowflake. Habilitan OLAP (Online Analytical Processing) para consultas multidimensionales en BI.</li>
-                <li><strong>Herramientas y visualización en BI:</strong> Plataformas como Tableau o Power BI crean dashboards interactivos; QlikView para asociaciones dinámicas. Beneficios: Detección de tendencias (ej. forecasting de ventas) y KPIs en tiempo real, mejorando ROI en un 20-30% según estudios de Gartner.</li>
-                <li><strong>Desafíos y tendencias futuras:</strong> Volumen de datos (big data), privacidad (GDPR) y integración con IA (machine learning para predicciones). Tendencias incluyen data lakes (Hadoop) y BI auto-servicio, empoderando usuarios no técnicos en la era de la analítica democratizada.</li>
+                <li><strong>CRM (Customer Relationship Management):</strong> Gestiona las relaciones con los clientes, centralizando datos de ventas, marketing y servicio. Ejemplo: Salesforce o Zoho CRM. Beneficios: fidelización, segmentación y atención personalizada.</li>
+                <li><strong>SCM (Supply Chain Management):</strong> Optimiza la cadena de suministro desde proveedores hasta el cliente final. Mejora la coordinación logística, el control de inventarios y la trazabilidad de productos. Ejemplo: Oracle SCM Cloud.</li>
+                <li><strong>ERP (Enterprise Resource Planning):</strong> Integra las funciones principales de la empresa (finanzas, recursos humanos, producción, compras) en una única plataforma. Ejemplo: SAP S/4HANA. Ventaja: visión global del negocio y reducción de errores.</li>
+                <li><strong>SIG (Sistemas de Información Gerencial):</strong> Proveen reportes, análisis y control administrativo a los niveles medios y altos de gestión. Soportan la planeación y evaluación del desempeño empresarial.</li>
+                <li><strong>Interoperabilidad entre sistemas:</strong> Los EAS modernos integran módulos de CRM, ERP y SCM en un entorno único, mediante APIs o arquitecturas SOA (Service Oriented Architecture), favoreciendo la fluidez de datos entre departamentos.</li>
+                <li><strong>Tendencias actuales:</strong> Migración hacia soluciones en la nube (SaaS), uso de IA en la automatización de procesos, analítica avanzada en tiempo real y enfoque en experiencia del usuario.</li>
             </ul>
         </article>
     </main>
@@ -52,7 +51,6 @@
         &copy; 2024 Empresa de Sistemas de Información
     </footer>
 
-    <!-- Enlace al script general para todas las semanas -->
-    <script src="script.js"></script>
+    <script src="animacion.js"></script>
 </body>
 </html>

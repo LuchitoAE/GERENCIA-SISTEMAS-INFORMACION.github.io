@@ -3,47 +3,46 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Semana 5: Sistemas de Información en los Negocios</title>
+    <title>Semana 8: Gestión de Aplicaciones para la Nube Híbrida</title>
     <link rel="stylesheet" href="semanas.css" />
 </head>
 <body>
     <header class="header">
         <div class="overlay"></div>
         <div class="header-content">
-            <h1>Sistemas de Información en los Negocios - Semana 5</h1>
-            <p class="descripcion-curso">Explorando el rol de los sistemas de información y la inteligencia de negocios en la optimización de procesos empresariales y la toma de decisiones basada en datos.</p>
+            <h1>Gestión de Aplicaciones para la Nube Híbrida - Semana 8</h1>
+            <p class="descripcion-curso">Analizando cómo la gestión de aplicaciones en entornos de nube híbrida impulsa la agilidad, la escalabilidad y la eficiencia en los negocios modernos.</p>
         </div>
     </header>
 
     <main class="container">
         <article class="unidad">
             <div class="unidad-titulo">
-                1. Los sistemas de información en los negocios
+                1. Gestión de aplicaciones en entornos de nube híbrida
                 <span class="icono-toggle">&#9654;</span>
             </div>
-            <!-- Sin clase 'oculto' aquí para mantener expandido inicial (evita conflicto con !important en CSS) -->
             <ul class="temas-lista" style="max-height: none; padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #e1e4e8;">
-                <li><strong>Definición y rol estratégico:</strong> Los sistemas de información (SI) son conjuntos integrados de componentes que recolectan, procesan y distribuyen datos para apoyar operaciones y decisiones en los negocios. Actúan como el "sistema nervioso" de la empresa, alineando TI con objetivos estratégicos para ganar ventaja competitiva.</li>
-                <li><strong>Tipos de SI en entornos empresariales:</strong> Incluyen TPS (procesamiento de transacciones) para operaciones diarias, MIS (información gerencial) para reportes, DSS (soporte a decisiones) para análisis y EIS (ejecutiva) para visión de alto nivel. Ejemplos: ERP como SAP para integración de procesos.</li>
-                <li><strong>Beneficios para los negocios:</strong> Mejoran la eficiencia operativa (reduciendo errores en un 40-60%), facilitan la colaboración (ej. CRM como Salesforce para ventas) y habilitan innovación, como e-commerce o análisis predictivo, impulsando el crecimiento y la retención de clientes.</li>
-                <li><strong>Integración con procesos de negocio:</strong> Los SI se alinean con cadenas de valor (modelo de Porter), automatizando flujos como supply chain o finanzas. Herramientas como BPM (Business Process Management) optimizan workflows, reduciendo tiempos de ciclo y costos.</li>
-                <li><strong>Desafíos y riesgos:</strong> Problemas como resistencia al cambio, brechas de seguridad (ej. ciberataques a datos sensibles) y obsolescencia. Soluciones incluyen capacitación, compliance con GDPR y adopción de cloud para escalabilidad, con ROI medible en 1-2 años.</li>
-                <li><strong>Casos de uso en industrias:</strong> En retail, SI como POS (Point of Sale) analizan ventas en tiempo real; en manufactura, MES (Manufacturing Execution Systems) controlan producción. Empresas como Amazon usan SI para personalización y logística predictiva.</li>
+                <li><strong>Concepto de nube híbrida:</strong> Combina infraestructuras de nube pública y privada, permitiendo que las aplicaciones se desplieguen y administren en ambos entornos según las necesidades de seguridad, costo o rendimiento.</li>
+                <li><strong>Gestión de aplicaciones híbridas:</strong> Implica el control centralizado de recursos distribuidos entre distintas plataformas (ej. AWS, Azure, VMware). Las herramientas de orquestación automatizan la implementación, el monitoreo y la escalabilidad.</li>
+                <li><strong>Ventajas de la nube híbrida:</strong> Flexibilidad para mover cargas de trabajo, continuidad operativa ante fallos, optimización de costos al usar recursos públicos solo cuando es necesario, y mayor control sobre datos sensibles.</li>
+                <li><strong>Desafíos de gestión:</strong> La complejidad de la integración, las diferencias entre plataformas y la necesidad de políticas unificadas de seguridad y cumplimiento (compliance). Solución: uso de contenedores y Kubernetes para portabilidad.</li>
+                <li><strong>Herramientas de gestión híbrida:</strong> Plataformas como Red Hat OpenShift, VMware Cloud Foundation y Azure Arc permiten administrar múltiples entornos desde un solo panel. Facilitan la automatización y la observabilidad de las aplicaciones.</li>
+                <li><strong>Buenas prácticas:</strong> Estandarizar procesos de despliegue (DevOps), aplicar políticas de seguridad Zero Trust, monitorear rendimiento con APM (Application Performance Management) y definir estrategias claras de backup y recuperación.</li>
             </ul>
         </article>
 
         <article class="unidad">
             <div class="unidad-titulo">
-                2. Fundamentos de inteligencia de negocios: bases de datos y administración de la información
+                2. Software de nube híbrida para un negocio más inteligente
                 <span class="icono-toggle">&#9654;</span>
             </div>
             <ul class="temas-lista oculto">
-                <li><strong>Conceptos básicos de BI (Business Intelligence):</strong> BI transforma datos crudos en insights accionables mediante herramientas de análisis, visualización y reporting. Facilita la toma de decisiones informada, con frameworks como el ciclo de Kimball para diseño de data warehouses.</li>
-                <li><strong>Bases de datos relacionales y no relacionales:</strong> Relacionales (SQL Server, MySQL) usan tablas y joins para datos estructurados; no relacionales (MongoDB, Cassandra) manejan big data no estructurado (ej. JSON para logs). Elección depende de volumen y velocidad (ACID vs. BASE).</li>
-                <li><strong>Administración de la información (Information Management):</strong> Incluye gobernanza de datos (calidad, metadata) y MDM (Master Data Management) para consistencia. Herramientas como Collibra aseguran compliance y evitan silos de datos, clave para BI preciso.</li>
-                <li><strong>ETL y data warehousing:</strong> Procesos ETL (Extract, Transform, Load) integran datos de fuentes diversas (ej. Talend o Informatica) en almacenes centralizados como Snowflake. Habilitan OLAP (Online Analytical Processing) para consultas multidimensionales en BI.</li>
-                <li><strong>Herramientas y visualización en BI:</strong> Plataformas como Tableau o Power BI crean dashboards interactivos; QlikView para asociaciones dinámicas. Beneficios: Detección de tendencias (ej. forecasting de ventas) y KPIs en tiempo real, mejorando ROI en un 20-30% según estudios de Gartner.</li>
-                <li><strong>Desafíos y tendencias futuras:</strong> Volumen de datos (big data), privacidad (GDPR) y integración con IA (machine learning para predicciones). Tendencias incluyen data lakes (Hadoop) y BI auto-servicio, empoderando usuarios no técnicos en la era de la analítica democratizada.</li>
+                <li><strong>Rol del software en la nube híbrida:</strong> Permite integrar inteligencia artificial, análisis de datos y automatización en los flujos de negocio, optimizando decisiones en tiempo real y reduciendo la carga operativa.</li>
+                <li><strong>Soluciones destacadas:</strong> IBM Cloud Pak, Google Anthos y Microsoft Azure Arc ofrecen entornos híbridos inteligentes que combinan datos locales y en la nube con análisis predictivo y gestión centralizada.</li>
+                <li><strong>Integración con inteligencia empresarial:</strong> Los sistemas híbridos se conectan con plataformas de BI (Business Intelligence) y analítica avanzada, facilitando la visibilidad global del negocio.</li>
+                <li><strong>Impacto estratégico:</strong> Permite a las empresas responder más rápido a cambios del mercado, innovar con nuevas aplicaciones sin interrumpir las existentes y aprovechar el poder de la nube sin perder control local.</li>
+                <li><strong>Seguridad y cumplimiento:</strong> Las soluciones inteligentes de nube híbrida aplican cifrado, segmentación y monitoreo continuo. Cumplen con normativas como ISO 27001 o GDPR, garantizando protección de datos sensibles.</li>
+                <li><strong>Tendencias futuras:</strong> Expansión del edge computing, IA generativa integrada a la nube, y automatización avanzada mediante políticas adaptativas basadas en machine learning para gestión de infraestructura.</li>
             </ul>
         </article>
     </main>
@@ -52,7 +51,6 @@
         &copy; 2024 Empresa de Sistemas de Información
     </footer>
 
-    <!-- Enlace al script general para todas las semanas -->
     <script src="script.js"></script>
 </body>
 </html>
