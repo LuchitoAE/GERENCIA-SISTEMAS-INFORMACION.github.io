@@ -1,104 +1,807 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Curso: Gerencia de Sistemas de Información</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
-    <!-- Font Awesome para íconos -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <title>Gerencia de Sistemas de Información - Plan por semanas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #0f766e;
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --radius-lg: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .subtitulo {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .unidad {
+      background-color: #e5f9f7;
+      border-radius: 20px;
+      padding: 16px 14px 14px;
+      margin-bottom: 18px;
+      border: 1px solid #a7f3d0;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .unidad-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .unidad-tit {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .unidad-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .unidad-meta span {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #ccfbf1;
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .unidad-capacidad {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .semanas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .semana-card {
+      background-color: var(--card-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 10px 10px 9px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .semana-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .semana-tit {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .semana-num {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #ecfeff;
+      border: 1px solid #99f6e4;
+      color: #0f766e;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #fef3c7;
+      color: #92400e;
+      margin-bottom: 2px;
+    }
+
+    .objetivo {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .temas {
+      font-size: 0.8rem;
+      padding-left: 16px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .temas li { margin-bottom: 2px; }
+
+    .media-bloque {
+      margin-top: 6px;
+      border-top: 1px dashed #e5e7eb;
+      padding-top: 6px;
+      font-size: 0.78rem;
+    }
+
+    .media-bloque strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .media-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 4px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .media-bloque a {
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: #0f766e;
+      font-weight: 500;
+    }
+
+    .media-bloque a:hover { text-decoration: underline; }
+
+    .nota {
+      font-size: 0.72rem;
+      color: #9ca3af;
+      margin-top: 2px;
+    }
+
+    .avance {
+      font-size: 0.72rem;
+      color: #6b7280;
+      text-align: right;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 700px) {
+      .unidad-header { flex-direction: column; align-items: flex-start; }
+      .unidad-meta { text-align: left; }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="overlay"></div>
-        <div class="header-content">
-            <h1>Gerencia de Sistemas de Información</h1>
-            <p class="descripcion-curso">
-                Este curso aborda la gestión estratégica y operativa de los sistemas de información en las organizaciones, 
-                enfocándose en la administración en la nube, aplicaciones empresariales, infraestructura tecnológica y desarrollo de sistemas.
-            </p>
+  <div class="page">
+    <h1>Gerencia de Sistemas de Información</h1>
+    <p class="subtitulo">Plan de trabajo por unidades (4) y semanas (4 por unidad)</p>
+
+    <!-- UNIDAD I -->
+    <section class="unidad" id="unidad-1">
+      <div class="unidad-header">
+        <div>
+          <div class="unidad-tit">Unidad I: Administración en la nube</div>
+          <div class="unidad-capacidad">
+            Capacidad: Comprender el papel de los sistemas de información, la computación en la nube
+            y la infraestructura de TI para proponer soluciones tecnológicas adecuadas a la empresa.
+          </div>
         </div>
-    </header>
+        <div class="unidad-meta">
+          <div>Semanas 1–4</div>
+          <span>Avance 0–25&nbsp;%</span>
+        </div>
+      </div>
 
-    <main class="container">
-        <section class="unidad">
-            <h2 class="unidad-titulo">
-                <span>Unidad 1: Administración en la Nube</span>
-                <i class="fas fa-chevron-down icono-toggle"></i>
-            </h2>
-            <ul class="temas-lista oculto">
-                <li><a href="semanas/semana01.html" class="tema-link">Semana 1</a></li>
-                <li><a href="semanas/semana02.html" class="tema-link">Semana 2</a></li>
-                <li><a href="semanas/semana03.html" class="tema-link">Semana 3</a></li>
-                <li><a href="semanas/semana04.html" class="tema-link">Semana 4</a></li>
-            </ul>
-        </section>
+      <div class="semanas-grid">
+        <!-- Semana 1 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">La información en la empresa</div>
+            <div class="semana-num">Semana 1</div>
+          </div>
+          <div class="pill">Sistemas de Información</div>
+          <p class="objetivo">
+            Objetivo: reconocer qué es un sistema de información y cómo apoya los distintos niveles
+            de gestión de una organización.
+          </p>
+          <ul class="temas">
+            <li>Concepto de dato, información y conocimiento.</li>
+            <li>Función de los sistemas de información en la empresa.</li>
+            <li>Tipos de sistemas (TPS, MIS, DSS, ESS) y niveles gerenciales.</li>
+            <li>Componentes de un SI: hardware, software, datos, personas y procesos.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://webcreatify.com/blog/?Business-Information-Systems=&id=125"
+                 alt="Diagrama de componentes de un sistema de información" />
+            <div class="nota">
+              Puedes extraer de esta página un diagrama de “Components of Information System”
+              y guardar solo la imagen para usarla en tu servidor.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=knmh5vKqLyA" target="_blank">
+              Introducción a los sistemas de información para la empresa
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 6,25&nbsp;%</div>
+        </article>
 
-        <section class="unidad">
-            <h2 class="unidad-titulo">
-                <span>Unidad 2: Aplicaciones Empresariales de Sistemas de Información</span>
-                <i class="fas fa-chevron-down icono-toggle"></i>
-            </h2>
-            <ul class="temas-lista oculto">
-                <li><a href="semanas/semana05.html" class="tema-link">Semana 5</a></li>
-                <li><a href="semanas/semana06.html" class="tema-link">Semana 6</a></li>
-                <li><a href="semanas/semana07.html" class="tema-link">Semana 7</a></li>
-                <li><a href="semanas/semana08.html" class="tema-link">Semana 8</a></li>
-            </ul>
-        </section>
+        <!-- Semana 2 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Fundamentos de computación en la nube</div>
+            <div class="semana-num">Semana 2</div>
+          </div>
+          <div class="pill">Cloud Computing</div>
+          <p class="objetivo">
+            Objetivo: identificar las características y modelos de la computación en la nube
+            y sus beneficios para el negocio.
+          </p>
+          <ul class="temas">
+            <li>Definición de cloud computing y características clave.</li>
+            <li>Modelos de servicio: IaaS, PaaS, SaaS con ejemplos.</li>
+            <li>Ventajas y riesgos de migrar a la nube.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://iconscout.com/illustration/cloud-computing-2975794"
+                 alt="Ilustración conceptual de computación en la nube" />
+            <div class="nota">
+              En IconScout puedes descargar ilustraciones de cloud computing ( PNG / SVG )
+              para incluirlas localmente en tu proyecto.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=ru8TjDuMh6I" target="_blank">
+              Cloud Computing para principiantes (curso completo)
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 12,5&nbsp;%</div>
+        </article>
 
-        <section class="unidad">
-            <h2 class="unidad-titulo">
-                <span>Unidad 3: Infraestructura de Tecnologías de Información</span>
-                <i class="fas fa-chevron-down icono-toggle"></i>
-            </h2>
-            <ul class="temas-lista oculto">
-                <li><a href="#" class="tema-link">Componentes de la infraestructura TI</a></li>
-                <li><a href="#" class="tema-link">Redes y telecomunicaciones</a></li>
-                <li><a href="#" class="tema-link">Data centers y almacenamiento</a></li>
-                <li><a href="#" class="tema-link">Gestión de la infraestructura TI</a></li>
-            </ul>
-        </section>
+        <!-- Semana 3 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Administración de servicios en la nube</div>
+            <div class="semana-num">Semana 3</div>
+          </div>
+          <div class="pill">Gestión en la nube</div>
+          <p class="objetivo">
+            Objetivo: comprender las tareas básicas para administrar recursos en la nube,
+            controlar costos y asegurar la continuidad del servicio.
+          </p>
+          <ul class="temas">
+            <li>Aprovisionamiento, monitoreo y escalado de recursos.</li>
+            <li>Uso de paneles de administración (ejemplo AWS / Azure / GCP).</li>
+            <li>Buenas prácticas de seguridad, copias de seguridad y recuperación.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://iconscout.com/illustrations/cloud-computing"
+                 alt="Múltiples ilustraciones de administración de servicios en la nube" />
+            <div class="nota">
+              Puedes elegir una ilustración de administración de nube (con personas operando laptops conectadas a una nube).
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=ru8TjDuMh6I" target="_blank">
+              Segmento sobre administración en la nube del mismo curso de Cloud Computing
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 18,75&nbsp;%</div>
+        </article>
 
-        <section class="unidad">
-            <h2 class="unidad-titulo">
-                <span>Unidad 4: Desarrollo de Sistemas de Información en la Empresa</span>
-                <i class="fas fa-chevron-down icono-toggle"></i>
-            </h2>
-            <ul class="temas-lista oculto">
-                <li><a href="#" class="tema-link">Ciclo de vida del desarrollo de sistemas</a></li>
-                <li><a href="#" class="tema-link">Metodologías ágiles y tradicionales</a></li>
-                <li><a href="#" class="tema-link">Herramientas para el desarrollo de software</a></li>
-                <li><a href="#" class="tema-link">Gestión de proyectos de sistemas de información</a></li>
-            </ul>
-        </section>
-    </main>
+        <!-- Semana 4 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Infraestructura de TI</div>
+            <div class="semana-num">Semana 4</div>
+          </div>
+          <div class="pill">Arquitectura de TI</div>
+          <p class="objetivo">
+            Objetivo: identificar los componentes de infraestructura de TI y su organización
+            en data centers físicos y en la nube.
+          </p>
+          <ul class="temas">
+            <li>Servidores, redes, almacenamiento y dispositivos de seguridad.</li>
+            <li>Infraestructura on-premise, virtualizada y basada en nube.</li>
+            <li>Principios de disponibilidad, redundancia y continuidad del negocio.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://aws.amazon.com/es/what-is/it-infrastructure/"
+                 alt="Esquema de infraestructura de TI empresarial" />
+            <div class="nota">
+              En la página de AWS sobre infraestructura de TI encontrarás diagramas sencillos
+              de servidores, redes y almacenamiento que puedes usar como referencia.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=hRhl6HepzZc" target="_blank">
+              ¿Qué es infraestructura TI?
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 25&nbsp;%</div>
+        </article>
+      </div>
+    </section>
 
-    <footer class="footer">
-        <p>© 2024 Gerencia de Sistemas de Información - Todos los derechos reservados</p>
-    </footer>
+    <!-- UNIDAD II -->
+    <section class="unidad" id="unidad-2">
+      <div class="unidad-header">
+        <div>
+          <div class="unidad-tit">Unidad II: Aplicaciones empresariales de SI</div>
+          <div class="unidad-capacidad">
+            Capacidad: utilizar aplicaciones empresariales para lograr excelencia operacional
+            y mejorar la relación con el cliente (BI, CRM, ERP, etc.).
+          </div>
+        </div>
+        <div class="unidad-meta">
+          <div>Semanas 5–8</div>
+          <span>Avance 25–50&nbsp;%</span>
+        </div>
+      </div>
 
-    <script>
-        document.querySelectorAll('.unidad-titulo').forEach(titulo => {
-            titulo.style.cursor = 'pointer';
-            titulo.addEventListener('click', () => {
-                const lista = titulo.nextElementSibling;
-                const icono = titulo.querySelector('.icono-toggle');
-                if (lista.classList.contains('oculto')) {
-                    lista.classList.remove('oculto');
-                    lista.style.maxHeight = lista.scrollHeight + "px";
-                    icono.classList.remove('fa-chevron-down');
-                    icono.classList.add('fa-chevron-up');
-                } else {
-                    lista.style.maxHeight = null;
-                    lista.classList.add('oculto');
-                    icono.classList.remove('fa-chevron-up');
-                    icono.classList.add('fa-chevron-down');
-                }
-            });
-        });
-    </script>
+      <div class="semanas-grid">
+        <!-- Semana 5 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Sistemas de información en los negocios y BI</div>
+            <div class="semana-num">Semana 5</div>
+          </div>
+          <div class="pill">Business Intelligence</div>
+          <p class="objetivo">
+            Objetivo: entender cómo los sistemas de información y BI apoyan la toma de decisiones
+            mediante indicadores y dashboards.
+          </p>
+          <ul class="temas">
+            <li>Rol de los SI en la cadena de valor y en la ventaja competitiva.</li>
+            <li>Conceptos básicos de Business Intelligence y KPIs.</li>
+            <li>Ejemplo de dashboard de ventas y clientes.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://www.kyubit.com/analytics-dashboard"
+                 alt="Ejemplo de dashboard de Business Intelligence" />
+            <div class="nota">
+              La página muestra ejemplos de dashboards con gráficos de barras, mapas y donuts,
+              útiles para ilustrar BI.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=35xMDT7IdD8" target="_blank">
+              ¿Qué es Business Intelligence? Explicación paso a paso
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 31,25&nbsp;%</div>
+        </article>
+
+        <!-- Semana 6 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Estructura informática integral y modelo EPS</div>
+            <div class="semana-num">Semana 6</div>
+          </div>
+          <div class="pill">Arquitectura de SI</div>
+          <p class="objetivo">
+            Objetivo: diseñar una vista global de los sistemas de información de la empresa
+            en niveles estratégico, táctico y operativo.
+          </p>
+          <ul class="temas">
+            <li>Estructura informática integral de los sistemas de información.</li>
+            <li>Modelo de tres planos (estratégico, táctico, operativo).</li>
+            <li>Integración entre aplicaciones y flujos de información.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://insurance-companies.co/information-systems-types/"
+                 alt="Tabla comparativa de tipos de sistemas de información" />
+            <div class="nota">
+              La infografía de tipos de SI (TPS, MIS, DSS, etc.) ayuda a conectar cada plano
+              con los sistemas que lo soportan.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=knmh5vKqLyA" target="_blank">
+              Fundamentos de los sistemas de información (repaso aplicado a la arquitectura)
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 37,5&nbsp;%</div>
+        </article>
+
+        <!-- Semana 7 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Aplicaciones empresariales: CRM, ERP, SCM, SIG</div>
+            <div class="semana-num">Semana 7</div>
+          </div>
+          <div class="pill">CRM · ERP · SCM</div>
+          <p class="objetivo">
+            Objetivo: distinguir los principales tipos de aplicaciones empresariales
+            y seleccionar un CRM adecuado para un caso real.
+          </p>
+          <ul class="temas">
+            <li>Concepto de Enterprise Application Software (EAS).</li>
+            <li>CRM para gestión de clientes y ventas.</li>
+            <li>ERP y SCM para integrar procesos internos y cadena de suministro.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://fischersolutions.com/software/business-intelligence/"
+                 alt="Pantalla de sistema empresarial con reportes y gráficos" />
+            <div class="nota">
+              El dashboard de ejemplo refleja la integración de datos típica de un ERP/CRM.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=IpCfGEFWO1Q" target="_blank">
+              ¿Qué es un CRM y para qué sirve? Beneficios y ejemplos
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 43,75&nbsp;%</div>
+        </article>
+
+        <!-- Semana 8 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Aplicaciones en nube híbrida y examen parcial</div>
+            <div class="semana-num">Semana 8</div>
+          </div>
+          <div class="pill">Nube híbrida</div>
+          <p class="objetivo">
+            Objetivo: comprender la nube híbrida y cómo alojar aplicaciones empresariales
+            combinando infraestructura local y nube pública.
+          </p>
+          <ul class="temas">
+            <li>Definición de nube híbrida y casos de uso típicos.</li>
+            <li>Decisiones sobre qué servicios se mantienen on-premise y cuáles migran.</li>
+            <li>Examen parcial: contenidos de las Unidades I y II.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://aws.amazon.com/es/what-is/hybrid-cloud/"
+                 alt="Esquema de nube híbrida conectando data center y nube pública" />
+            <div class="nota">
+              AWS y Google Cloud muestran diagramas claros de entornos híbridos que puedes
+              guardar como imagen.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=xu-XWeyAie4" target="_blank">
+              Creciendo rentablemente con la nube híbrida (experiencia empresarial)
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 50&nbsp;%</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- UNIDAD III -->
+    <section class="unidad" id="unidad-3">
+      <div class="unidad-header">
+        <div>
+          <div class="unidad-tit">Unidad III: Gobierno e infraestructura de TI</div>
+          <div class="unidad-capacidad">
+            Capacidad: aplicar conceptos de gobierno de TI y gestión de servicios
+            para asegurar que la tecnología aporte valor al negocio.
+          </div>
+        </div>
+        <div class="unidad-meta">
+          <div>Semanas 9–12</div>
+          <span>Avance 50–75&nbsp;%</span>
+        </div>
+      </div>
+
+      <div class="semanas-grid">
+        <!-- Semana 9 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Gobierno de TI y alineamiento estratégico</div>
+            <div class="semana-num">Semana 9</div>
+          </div>
+          <div class="pill">Gobierno de TI</div>
+          <p class="objetivo">
+            Objetivo: entender qué es el gobierno de TI y cómo se alinea la tecnología
+            con la misión y visión de la empresa.
+          </p>
+          <ul class="temas">
+            <li>Concepto de gobierno de TI y marcos de referencia.</li>
+            <li>Alineamiento estratégico: objetivos de negocio vs. objetivos de TI.</li>
+            <li>Gestión por procesos en la función TI.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://www.ibm.com/es-es/think/topics/it-governance"
+                 alt="Esquema conceptual de gobierno de TI" />
+            <div class="nota">
+              IBM presenta gráficos que relacionan gobierno de TI, marcos y creación de valor.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=Rk2u5sz5cXc" target="_blank">
+              ¿Qué es el gobierno de TI y por qué toda organización lo necesita?
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 56,25&nbsp;%</div>
+        </article>
+
+        <!-- Semana 10 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Gestión de servicios de TI (ITSM)</div>
+            <div class="semana-num">Semana 10</div>
+          </div>
+          <div class="pill">ITIL y servicios</div>
+          <p class="objetivo">
+            Objetivo: conocer el enfoque de ITIL e ITSM para gestionar servicios de TI,
+            catálogo y niveles de servicio.
+          </p>
+          <ul class="temas">
+            <li>Conceptos básicos de ITSM e ITIL.</li>
+            <li>Estrategia del servicio, portafolio y catálogo.</li>
+            <li>Acuerdos de nivel de servicio (SLA).</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://itserviceblogs.s3.amazonaws.com/itil-service-desk.png"
+                 alt="Diagrama de ciclo de vida de servicios ITIL" />
+            <div class="nota">
+              Si no tienes esta imagen, puedes usar cualquier esquema de ciclo de vida ITIL
+              (estrategia, diseño, transición, operación, mejora continua).
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=20WlkQ5qwcU" target="_blank">
+              ¿Qué es ITIL? Guía completa
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 62,5&nbsp;%</div>
+        </article>
+
+        <!-- Semana 11 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Diseño y transición del servicio</div>
+            <div class="semana-num">Semana 11</div>
+          </div>
+          <div class="pill">Diseño de servicio</div>
+          <p class="objetivo">
+            Objetivo: diseñar un servicio de TI y planificar su transición hacia producción
+            con control de riesgos.
+          </p>
+          <ul class="temas">
+            <li>Diseño del servicio: procesos, personas, tecnología y proveedores.</li>
+            <li>Transición del servicio: pruebas, despliegue y gestión de cambios.</li>
+            <li>Gestión de riesgos e impacto en el negocio.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://otrs.com/otrsmag/it-service-desk/"
+                 alt="Diagrama de service desk y flujos de atención" />
+            <div class="nota">
+              Estas ilustraciones muestran el flujo de incidentes hacia el service desk,
+              útil para explicar diseño y transición.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=20WlkQ5qwcU" target="_blank">
+              Sección sobre ciclo de vida del servicio en el video de ITIL
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 68,75&nbsp;%</div>
+        </article>
+
+        <!-- Semana 12 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Gestión del cambio, incidencias y Service Desk</div>
+            <div class="semana-num">Semana 12</div>
+          </div>
+          <div class="pill">Operación del servicio</div>
+          <p class="objetivo">
+            Objetivo: modelar el flujo completo de un incidente de TI
+            desde el registro hasta la solución y cierre.
+          </p>
+          <ul class="temas">
+            <li>Gestión del cambio y gestión del conocimiento.</li>
+            <li>Gestión de eventos, incidencias y problemas.</li>
+            <li>Rol del Service Desk y métricas básicas.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://nst.com.au/2015/10/20/service-desk-management/"
+                 alt="Equipo de service desk atendiendo usuarios" />
+            <div class="nota">
+              Foto típica de mesa de ayuda: agentes con auriculares trabajando frente a equipos.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=qUvw0e-cZFo" target="_blank">
+              Módulo de gestión de incidentes en ServiceDesk Plus
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 75&nbsp;%</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- UNIDAD IV -->
+    <section class="unidad" id="unidad-4">
+      <div class="unidad-header">
+        <div>
+          <div class="unidad-tit">Unidad IV: Desarrollo de sistemas de información</div>
+          <div class="unidad-capacidad">
+            Capacidad: proponer y desarrollar soluciones de sistemas de información
+            para mejorar procesos y resultados organizacionales.
+          </div>
+        </div>
+        <div class="unidad-meta">
+          <div>Semanas 13–16</div>
+          <span>Avance 75–100&nbsp;%</span>
+        </div>
+      </div>
+
+      <div class="semanas-grid">
+        <!-- Semana 13 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Ciclo de vida del desarrollo de sistemas</div>
+            <div class="semana-num">Semana 13</div>
+          </div>
+          <div class="pill">SDLC</div>
+          <p class="objetivo">
+            Objetivo: conocer las fases del ciclo de vida del desarrollo de software
+            y las diferencias entre enfoques tradicionales y ágiles.
+          </p>
+          <ul class="temas">
+            <li>Fases del SDLC: análisis, diseño, implementación, pruebas, despliegue y mantenimiento.</li>
+            <li>Modelo en cascada y modelos iterativos.</li>
+            <li>Visión general de metodologías ágiles.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://aws.amazon.com/es/what-is/sdlc/"
+                 alt="Esquema del ciclo de vida de desarrollo de software" />
+            <div class="nota">
+              AWS e IBM tienen gráficos claros del SDLC que muestran todas las fases del ciclo.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=jbMpaom-ZCY" target="_blank">
+              Ciclo de vida del desarrollo de software en 60 segundos
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 81,25&nbsp;%</div>
+        </article>
+
+        <!-- Semana 14 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Metodologías ágiles y Scrum</div>
+            <div class="semana-num">Semana 14</div>
+          </div>
+          <div class="pill">Scrum y agilidad</div>
+          <p class="objetivo">
+            Objetivo: aplicar los conceptos básicos de Scrum para organizar el trabajo
+            del proyecto de sistema de información.
+          </p>
+          <ul class="temas">
+            <li>Principios de las metodologías ágiles.</li>
+            <li>Scrum: roles, eventos y artefactos.</li>
+            <li>Planificación de Sprints y backlog del producto.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://aws.amazon.com/es/what-is/sdlc/"
+                 alt="Diagrama iterativo que puede reutilizarse para explicar agilidad" />
+            <div class="nota">
+              Puedes reutilizar el esquema del ciclo iterativo o buscar un diagrama específico de Scrum (sprint, backlog, etc.).
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/watch?v=WZ8U_NHVdhI" target="_blank">
+              ¿Qué es Scrum? Webinar completo en español
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 87,5&nbsp;%</div>
+        </article>
+
+        <!-- Semana 15 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Proyecto práctico de sistema de información</div>
+            <div class="semana-num">Semana 15</div>
+          </div>
+          <div class="pill">Proyecto integrador</div>
+          <p class="objetivo">
+            Objetivo: integrar lo aprendido en un proyecto de sistema de información
+            aplicado a una empresa específica.
+          </p>
+          <ul class="temas">
+            <li>Definición del problema y objetivos del sistema.</li>
+            <li>Presentación de arquitectura, módulos y modelo de datos.</li>
+            <li>Demostración funcional (prototipo o simulación).</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://www.hdiwestflorida.com/wp-content/uploads/2018/08/next-stop-quality.jpg"
+                 alt="Equipo presentando un proyecto frente a computadores" />
+            <div class="nota">
+              Cualquier fotografía de estudiantes o profesionales presentando un proyecto de TI
+              funciona bien para esta semana.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/results?search_query=como+presentar+proyectos+de+ti"
+               target="_blank">
+              Búsqueda de videos: “cómo presentar proyectos de TI”
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 93,75&nbsp;%</div>
+        </article>
+
+        <!-- Semana 16 -->
+        <article class="semana-card">
+          <div class="semana-header">
+            <div class="semana-tit">Evaluación final y cierre del curso</div>
+            <div class="semana-num">Semana 16</div>
+          </div>
+          <div class="pill">Cierre del curso</div>
+          <p class="objetivo">
+            Objetivo: evaluar integralmente los conocimientos y reflexionar
+            sobre la importancia de la gerencia de sistemas de información.
+          </p>
+          <ul class="temas">
+            <li>Evaluación final teórico–práctica.</li>
+            <li>Entrega del informe final del proyecto.</li>
+            <li>Autoevaluación y retroalimentación del curso.</li>
+          </ul>
+          <div class="media-bloque">
+            <strong>Imagen sugerida:</strong>
+            <img class="media-img"
+                 src="https://images.pexels.com/photos/7092614/pexels-photo-7092614.jpeg"
+                 alt="Estudiante completando una evaluación final en su computadora" />
+            <div class="nota">
+              Puedes usar cualquier foto libre (por ejemplo de Pexels/Unsplash) donde se vea
+              un estudiante dando un examen o cerrando un proyecto.
+            </div>
+            <strong>Video sugerido:</strong>
+            <a href="https://www.youtube.com/results?search_query=resumen+gerencia+de+sistemas+de+informacion"
+               target="_blank">
+              Búsqueda de videos: “resumen gerencia de sistemas de información”
+            </a>
+          </div>
+          <div class="avance">Avance acumulado: 100&nbsp;%</div>
+        </article>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
