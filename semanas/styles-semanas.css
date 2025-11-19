@@ -1,0 +1,189 @@
+/* =========================================================
+   ESTILOS GENERALES PARA PÁGINAS DE SEMANAS
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f7f9fc;
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    background: #003366;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.nav {
+    margin-top: 10px;
+}
+
+.nav-link {
+    color: #d9e8ff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* =========================================================
+   SECCIÓN PRINCIPAL
+   ========================================================= */
+
+.section {
+    padding: 50px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.intro {
+    font-size: 1.15rem;
+    background: #eef4fb;
+    border-left: 5px solid #003366;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+
+/* =========================================================
+   BLOQUES DE CONTENIDO
+   ========================================================= */
+
+.content-block {
+    background: #ffffff;
+    padding: 25px 30px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.content-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+}
+
+.content-block h3 {
+    color: #003366;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.content-block p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* Listas */
+.content-block ul {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.content-block ul li {
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+}
+
+/* =========================================================
+   BOTONES DE NAVEGACIÓN ENTRE SEMANAS
+   ========================================================= */
+
+.week-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.btn-prev,
+.btn-next {
+    padding: 12px 22px;
+    background: #003366;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+    background: #00264d;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    background: #00264d;
+    color: #cfe0f5;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .content-block {
+        padding: 20px;
+    }
+
+    .week-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-prev, .btn-next {
+        width: 100%;
+        text-align: center;
+    }
+}
